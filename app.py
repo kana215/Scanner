@@ -4,8 +4,10 @@ from PIL import Image
 import base64
 import io
 import json
+import os  
 
-OPENAI_API_KEY = "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"
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 st.set_page_config(page_title="OCR 2.0", layout="wide")
@@ -86,3 +88,4 @@ if "ocr_result" in st.session_state:
             file_name="ocr_result.json",
             mime="application/json"
         )
+
