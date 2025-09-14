@@ -7,13 +7,11 @@ import json
 import os  
 import streamlit as st
 
+# Получаем ключ из Secrets
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
-# Проверяем, что ключ подхватился
-if OPENAI_API_KEY is None:
-    raise ValueError("OPENAI_API_KEY не найден. Проверьте Secrets на Streamlit Cloud.")
 
-# Инициализация клиента OpenAI с ключом
+# Инициализация клиента OpenAI (оставляем)
 client = OpenAI(api_key=OPENAI_API_KEY)
 st.set_page_config(page_title="OCR 2.0", layout="wide")
 st.title("OCR 2.0 Scanner для банковских документов")
@@ -93,6 +91,7 @@ if "ocr_result" in st.session_state:
             file_name="ocr_result.json",
             mime="application/json"
         )
+
 
 
 
