@@ -1,0 +1,7 @@
+streamlit 
+paddleocr 
+transformers 
+torch 
+pillow 
+pydantic
+openai
